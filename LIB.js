@@ -69,10 +69,21 @@ export class Player{
         }
         
     }
-    Desh(){
+    async Desh(){
         this.Status = 2
         this.SetAnim()
+        await wait(100)
         this.Pos.x += this.Direction*8
+        await wait(300) 
+        this.Status = 0
+        this.SetAnim()
+    }
+    async Attack(){
+        this.Status = 3
+        this.SetAnim()
+        await wait(700)
+        this.Status = 1
+        this.SetAnim()
     }
 }
 export class Animation{

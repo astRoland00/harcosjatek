@@ -7,7 +7,7 @@ async function Game() {
     playerelement.style.left = `${player.Pos.x * 32}px`
     playerelement.style.top = `${player.Pos.y * 32}px`
     playerelement.style.translate = `-50% -50%`
-    await wait(50)
+    await wait(10)
     Game()
 }
 
@@ -23,9 +23,12 @@ addEventListener("keyup", (event) => {
             player.Jump()
         }
     }
+    if (event.key == "q") {
+        player.Attack()
+    }
 })
 
-addEventListener("keydown", (event) => { 
+addEventListener("keydown", (event) => {
     switch (event.key) {
         
 
